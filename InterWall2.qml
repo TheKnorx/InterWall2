@@ -40,6 +40,7 @@ Window {
     
     MouseArea {
         anchors.fill: parent
+        hoverEnabled: true
         onPositionChanged: (mouse) => {
             canvas.mouseX = mouse.x
             canvas.mouseY = mouse.y
@@ -82,14 +83,17 @@ Window {
 
                 ctx.fillRect(p.x, p.y, particle_size, particle_size)
                 
-                // Draw a line to the mouse if in reach#
-                if ()
+                // Draw a line to the mouse if in reach
+                if (! ( Math.abs(p.x - mouseX) <= particles_mouse_distance_px 
+                    && Math.abs(p.y - mouseY) <= particles_mouse_distance_px) ) {continue}
                 ctx.beginPath()
                 ctx.strokeStyle = "red"
-                ctx.lineWidth = 2
-                ctx.moveTo(50, 50)
-                ctx.lineTo(150, 150)
+                ctx.lineWidth = 1
+                ctx.moveTo(p.x, p.y)
+                ctx.lineTo(mouseX, mouseY)
                 ctx.stroke() // Essential: without this, the line is not drawn
+                
+                
             }
         }
     }
