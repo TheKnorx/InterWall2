@@ -1,0 +1,10 @@
+{
+  "KPackageStructure": "Plasma/Wallpaper",
+  "KPlugin": {
+    "Id": "particlewallpaper",
+    "Name": "Particle Wallpaper",
+    "ServiceTypes": ["Plasma/Wallpaper"]
+  },
+  "X-Plasma-API": "declarativeappletscript",
+  "X-Plasma-MainScript": "contents/ui/main.qml"
+}
