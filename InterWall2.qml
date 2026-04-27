@@ -5,6 +5,7 @@ import QtQuick.Controls
 
 Window {
     id: main
+    title: "particle-wallpaper"
     // Constants: 
     readonly property real  particles_speed: 0.6
     readonly property int   particles_count: 100
@@ -19,9 +20,9 @@ Window {
     height: Screen.height
     visibility: Window.FullScreen
     visible: true
-    title: "Interactive Wallpaper Layer"
+    //title: "Interactive Wallpaper Layer"
     color: "transparent"
-    flags: Qt.FramelessWindowHint
+    flags: Qt.FramelessWindowHint | Qt.Window
 
    Action {
         id: quitAction
@@ -66,8 +67,8 @@ Window {
         anchors.fill: parent
 
         property var particles: []
-        property real mouseX: 0
-        property real mouseY: 0
+        property real mouseX: -particles_mouse_distance_px;
+        property real mouseY: -particles_mouse_distance_px;
 
         onPaint: {
             var ctx = getContext("2d")
